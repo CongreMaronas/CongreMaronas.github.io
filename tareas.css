@@ -1,34 +1,64 @@
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #272727;
-  }
+.container {
 
-  header {
-        text-align: center;
-        color: white;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 2px solid #d1d1d1;
-  }
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  align-self: center;
+}
 
-  th {
-    background-color: #2f61be;
-    font-weight: bold;
-    text-align: center;
-  }
 
-  tr {
-    background-color: #bec1c7;
-  }
-  tr.par-row {
-    background-color: #99a7c0;
-  }
+button {
+  margin: 5%;
+  font-size: 20px;
+}
 
-  td, th {
-    border: 1px solid #d1d1d1;
-    padding: 8px;      
-  }
-  
+button:hover {
+  background-color: #afafaf;
+}
+
+table {
+  border-collapse: separate;
+  width: 95%;
+  margin: 30px;
+  border: 2px solid #d1d1d1;
+  text-align: center;
+  font-size: x-large;
+  max-width: 500px;
+
+}
+
+
+td {
+  width: 50%;
+
+}
+
+table tr:nth-child(odd) {
+  background-color: #c3c6cc;
+
+}
+
+table tr:nth-child(even) {
+  background-color: #91afeb;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #272727;
+  justify-content: center;
+  position: absolute;
+
+}
