@@ -24,12 +24,12 @@ button:hover {
 
 table {
   border-collapse: separate;
-  width: 95%;
+  width: 98%;
   margin: 30px;
   border: 2px solid #d1d1d1;
   text-align: center;
   font-size: x-large;
-  max-width: 500px;
+  max-width: 95%;
 
 }
 
