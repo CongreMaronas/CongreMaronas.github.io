@@ -25,7 +25,7 @@ function loadDates() {
         .then(response => response.text())
         .then(data => {
             var lines = data.split('\n');
-            const fechas = [];
+            const fechas = [10000];
             for (var i = 1; i < lines.length; i++) {
                 var cells = lines[i].split(',');
 
@@ -34,11 +34,9 @@ function loadDates() {
             }
 
             var actualDate = new Date().getDate();
-            if (actualDate <= fechas[closestIndex(actualDate, fechas)]){
-                columna = closestIndex(actualDate, fechas)+1;
-            }else {
-                columna = closestIndex(actualDate, fechas)+2;
-            };
+            var ci = closestIndex(actualDate, fechas);
+            columna = ci;
+            
             
 
         }).catch(error => {
