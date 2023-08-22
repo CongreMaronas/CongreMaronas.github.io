@@ -3,6 +3,7 @@ var csvUrl = "https://docs.google.com/spreadsheets/d/1kmwcFrbbZuHxIbjc8Ow13_ANCS
 
 
 var columna = 1;
+var cantidadColumnas = 1;
 
 //Número más cercano, retorna índice del array
 const closestIndex = (num, arr) => {
@@ -33,11 +34,20 @@ function loadDates() {
 
             }
 
+            //Set Cantidad de Fechas
+            cantidadColumnas = fechas.length - 1;
+
             var actualDate = new Date().getDate();
             var ci = closestIndex(actualDate, fechas);
-            columna = ci;
-            
-            
+
+            //Chequear si ya pasó la fecha elegida, y si no es el último el índice de array, para evitar desborde 
+            if (actualDate > fechas[ci] && ci < fechas.length - 1) {
+                columna = ci + 1;
+            } else {
+                columna = ci;
+            };
+
+
 
         }).catch(error => {
             console.error("Error al cargar el archivo CSV:", error);
@@ -65,7 +75,7 @@ function loadCsvData() {
             fecha.textContent = cells[0];
 
 
-            for (var i = 1; i < lines.length+1; i++) {
+            for (var i = 1; i < lines.length + 1; i++) {
 
                 var row = table.insertRow();
 
@@ -97,7 +107,7 @@ var buttonMinus = document.getElementById("buttonMinus");
 
 
 function columnPlus() {
-    if (columna < 9) {
+    if (columna < cantidadColumnas) {
         columna++;
         loadCsvData();
     }
